@@ -4,8 +4,7 @@
   entry: >
     pipenv lock -r > requirements.txt
   language: script
-  types: [file]
-  files: \.(lock)$
+  always_run: true
 
 - id: pipenv-generate-requirements-no-index
   name: Generate requirements.txt
@@ -13,5 +12,4 @@
   entry: >
     pipenv lock -r > requirements.txt && sed -i '' -e '$1d' requirements.txt
   language: script
-  types: [file]
-  files: \.(lock)$
+  always_run: true

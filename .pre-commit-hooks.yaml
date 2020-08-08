@@ -1,0 +1,17 @@
+- id: pipenv-generate-requirements
+  name: Generate requirements.txt
+  description: This hook generates a requirements.txt files from Pipfile.lock
+  entry: >
+    pipenv lock -r > requirements.txt
+  language: [script]
+  types: [text]
+  files: \.lock$
+
+- id: pipenv-generate-requirements-no-index
+  name: Generate requirements.txt
+  description: This hook generates a requirements.txt files from Pipfile.lock without the index url
+  entry: >
+    pipenv lock -r > requirements.txt && sed -i '' -e '$1d' requirements.txt
+  language: [script]
+  types: [text]
+  files: \.lock$

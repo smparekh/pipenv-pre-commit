@@ -13,4 +13,7 @@ Generates (or regenerates) a requirements.txt file
 
 id: `pipenv-generate-requirements-no-index`
 
-Generates (or regenerates) a requirements.txt file without an index, useful if using a pypi mirror locally
+Generates (or regenerates) a requirements.txt file without
+* index lines (`-i`), useful if using a pypi mirror locally
+* extra index lines (`--extra-index`), useful if using multiple pypi indexes
+* other pip dash directives, like editable (`-e`)
